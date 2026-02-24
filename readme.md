@@ -40,7 +40,7 @@ Este proyecto es una aplicación web diseñada para gestionar un inventario de l
 
 4.  **Acceder**:
     Abre [http://localhost:8000](http://localhost:8000) en tu navegador.
-    
-## 📐 Arquitectura del Sistema (UML)
+
+## Arquitectura del Sistema (UML)
 
 ![Diagrama UML](diagramaUML.png)
