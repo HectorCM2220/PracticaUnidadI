@@ -11,7 +11,16 @@ class Libro:
     """
 
     def __init__(self, titulo, autor, ano, isbn, categoria):
-        """Inicializa un objeto Libro con sus atributos básicos."""
+        """
+        Inicializa un objeto Libro con sus atributos básicos.
+
+        Args:
+            titulo (str): Título del libro.
+            autor (str): Autor del libro.
+            ano (str): Año de publicación.
+            isbn (str): Código ISBN único.
+            categoria (str): Categoría o género del libro.
+        """
         self.titulo = titulo
         self.autor = autor
         self.ano = ano
@@ -19,7 +28,12 @@ class Libro:
         self.categoria = categoria
 
     def __str__(self):
-        """Devuelve una representación en cadena del libro."""
+        """
+        Devuelve una representación en cadena del libro.
+
+        Returns:
+            str: Cadena con los datos del libro.
+        """
         return (
             f"{self.titulo} | {self.autor} | {self.ano} | "
             f"ISBN: {self.isbn} | {self.categoria}"
@@ -37,7 +51,12 @@ class Nodo:
     """
 
     def __init__(self, dato):
-        """Inicializa un nodo con un libro y referencias vacías."""
+        """
+        Inicializa un nodo con un libro y referencias vacías.
+
+        Args:
+            dato (Libro): Objeto libro a almacenar en el nodo.
+        """
         self.dato = dato
         self.siguiente = None
         self.anterior = None
@@ -103,7 +122,7 @@ class ListaDoble:
             isbn (str): Código ISBN a buscar.
 
         Returns:
-            Nodo: Nodo que contiene el libro encontrado o None.
+            Nodo | None: Nodo que contiene el libro encontrado o None.
         """
         actual = self.cabeza
         while actual:
