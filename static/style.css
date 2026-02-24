@@ -1,0 +1,379 @@
+:root {
+    --accent: #a78bfa;
+    --accent-glow: rgba(167, 139, 250, 0.4);
+    --text: #f1f5f9;
+    --text-dim: #94a3b8;
+    --glass: rgba(15, 23, 42, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --aurora-1: #4c1d95;
+    --aurora-2: #1e3a8a;
+    --aurora-3: #134e4a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #020617;
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* CORRECCIÓN: Evitar fondo blanco en autocompletado del navegador (Chrome/Edge/Safari) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #0f172a inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.aurora-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(100px);
+    opacity: 0.5;
+    background:
+        radial-gradient(circle at 0% 0%, var(--aurora-1) 0%, transparent 50%),
+        radial-gradient(circle at 100% 0%, var(--aurora-2) 0%, transparent 50%),
+        radial-gradient(circle at 50% 100%, var(--aurora-3) 0%, transparent 50%);
+    animation: aurora-flow 20s infinite alternate ease-in-out;
+}
+
+@keyframes aurora-flow {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1) rotate(2deg);
+    }
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.italic {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+/* Carrusel de Nodos */
+.carousel-section {
+    margin-bottom: 4rem;
+    perspective: 1000px;
+}
+
+.node-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.node-display {
+    width: 100%;
+    max-width: 450px;
+    min-height: 280px;
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 2rem;
+    padding: 2.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.node-display:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.node-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+}
+
+.node-content .author {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+}
+
+.node-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.detail-item span {
+    display: block;
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+}
+
+.nav-btn {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.nav-btn:hover:not(:disabled) {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.nav-btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.nav-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.node-indicator {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+}
+
+/* Buscador Estilizado */
+.search-section {
+    margin-bottom: 3rem;
+}
+
+.glass-input-wrapper {
+    position: relative;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.glass-input-wrapper input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    padding: 1rem 0;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.glass-input-wrapper label {
+    position: absolute;
+    left: 1.5rem;
+    color: var(--text-dim);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.glass-input-wrapper input:focus~label,
+.glass-input-wrapper input:not(:placeholder-shown)~label {
+    transform: translateY(-1.4rem) scale(0.85);
+    color: var(--accent);
+}
+
+.search-icon {
+    color: var(--text-dim);
+    width: 20px;
+}
+
+/* Formulario Cards */
+.glass-card {
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    padding: 3rem;
+    border-radius: 2rem;
+}
+
+.glass-card h2 {
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.grid-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-field {
+    position: relative;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.input-field input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0.8rem 0;
+    color: var(--text);
+    outline: none;
+}
+
+.input-field label {
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+    color: var(--text-dim);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+/* CORRECCIÓN DE ESTADO: El estilo de focus solo si es necesario */
+.input-field input:focus~label,
+.input-field input:not(:placeholder-shown)~label {
+    top: -1rem;
+    font-size: 0.75rem;
+    color: var(--accent);
+}
+
+.input-field .bar {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background: var(--accent);
+    transition: 0.4s ease all;
+}
+
+.input-field input:focus~.bar {
+    width: 100%;
+}
+
+.full {
+    grid-column: span 2;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.prime-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.prime-btn:hover {
+    background: var(--accent);
+    color: #000;
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.delete-action {
+    display: block;
+    margin-top: 2rem;
+    color: #ef4444;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-align: right;
+    cursor: pointer;
+}
+
+.delete-action:hover {
+    text-decoration: underline;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: #000;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 2rem;
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}

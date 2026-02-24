@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca | Lista Doble Enlazada</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="aurora-bg"></div>
+
+    <div class="container">
+        <header>
+            <h1>Archivo <span class="italic">Literario</span></h1>
+            <div class="team-section">
+                <div class="team-members">
+                    <span class="member">Ceja Cervantes Alejandro</span>
+                    <span class="member">Covarrubias Martinez Hector</span>
+                    <span class="member">Escobar Rubio Dominic</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Carrusel de Nodos (Lista Doble) -->
+            <section class="carousel-section">
+                <div class="node-navigation">
+                    <button id="prev-btn" class="nav-btn" title="Nodo Anterior">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+
+                    <div id="active-node-container" class="node-display">
+                        <!-- El libro actual se renderiza aquí -->
+                        <div class="empty-state">
+                            <p>Registre un libro</p>
+                        </div>
+                    </div>
+
+                    <button id="next-btn" class="nav-btn" title="Nodo Siguiente">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="node-indicator">
+                    <span id="current-index">0</span> / <span id="total-nodes">0</span>
+                </div>
+            </section>
+
+            <!-- Buscador y Filtros -->
+            <section class="search-section">
+                <div class="glass-input-wrapper">
+                    <input type="text" id="search" placeholder=" " autocomplete="off">
+                    <label for="search">Buscar por título, autor o ISBN...</label>
+                    <div class="search-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formulario de Registro -->
+            <section class="action-section">
+                <div class="glass-card">
+                    <h2>Registrar Nuevo Nodo</h2>
+                    <form id="libro-form">
+                        <div class="grid-inputs">
+                            <div class="input-field">
+                                <input type="text" id="titulo" placeholder=" " required>
+                                <label for="titulo">Título del Libro</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="autor" placeholder=" " required>
+                                <label for="autor">Autor</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="ano" placeholder=" " required>
+                                <label for="ano">Año de Publicación</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="isbn" placeholder=" " required>
+                                <label for="isbn">ISBN (Código Único)</label>
+                            </div>
+                        </div>
+                        <div class="input-field full">
+                            <input type="text" id="categoria" placeholder=" " required>
+                            <label for="categoria">Categoría Literaria</label>
+                        </div>
+                        <button type="submit" class="prime-btn">Insertar al Final</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
