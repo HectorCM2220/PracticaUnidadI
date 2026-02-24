@@ -35,7 +35,7 @@ Este proyecto es una aplicación web diseñada para gestionar un inventario de l
 
 3.  **Iniciar el sistema**:
     ```bash
-    python -m uvicorn main.py:app --reload
+    python -m uvicorn main:app --reload
     ```
 
 ## Arquitectura del Sistema (UML)
