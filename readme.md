@@ -1,4 +1,5 @@
 Biblioteca con Lista Doblemente Enlazada
+
 Descripción
 Este proyecto implementa una biblioteca digital utilizando una lista doblemente enlazada en Python.
 Permite realizar operaciones CRUD (Crear, Leer, Actualizar y Eliminar) sobre libros, gestionados mediante un menú interactivo en consola.
