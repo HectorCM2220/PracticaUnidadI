@@ -1,24 +1,43 @@
-# Biblioteca con Lista Doblemente Enlazada
-## Descripción
-Este proyecto implementa una **biblioteca digital** utilizando una estructura de datos de **lista doblemente enlazada** en Python. 
-El sistema permite realizar operaciones **CRUD** (Crear, Leer, Actualizar y Eliminar) sobre una colección de libros, los cuales son gestionados íntegramente mediante un menú interactivo en la consola. La lista doblemente enlazada permite una navegación eficiente en ambos sentidos (hacia adelante y hacia atrás).
----
-##  Características principales
-*   **Gestión Completa de Libros:** Agrega libros con metadatos detallados (título, autor, año, ISBN y categoría).
-*   **Visualización Flexible:** Muestra la colección de libros en orden cronológico de inserción o en orden inverso.
-*   **Búsqueda Avanzada:** 
-    *   Búsqueda exacta por **ISBN**.
-    *   Búsqueda filtrada por **autor** o **categoría**.
-*   **Edición Dinámica:** Actualiza la información de cualquier libro existente.
-*   **Eliminación Segura:** Remueve libros de la biblioteca de forma permanente.
-*   **Interfaz Intuitiva:** Menú interactivo en consola para una navegación sencilla.
----
-## Requisitos
-*   **Python 3.8** o superior.
-*   Sistema operativo compatible (**Windows**, **Linux**, **macOS**).
----
+# Sistema de Gestión de Biblioteca (Lista Doble Enlazada)
+
+Este proyecto es una aplicación web diseñada para gestionar un inventario de libros utilizando una estructura de datos de **Lista Doblemente Enlazada**. Desarrollado como parte de la **Práctica Unidad I**.
+
+## Integrantes del Equipo
+*   **Ceja Cervantes Alejandro**
+*   **Covarrubias Martinez Hector**
+*   **Escobar Rubio Dominic**
+
+## Tecnologías Utilizadas
+*   **Backend**: [FastAPI](https://fastapi.tiangolo.com/) (Python 3.10+)
+*   **Servidor**: [Uvicorn](https://www.uvicorn.org/)
+*   **Frontend**: HTML5, CSS3 , JavaScript 
+*   **Estándares**: PEP 8 para el código Python
+
+## Estructura del Proyecto
+*   `main.py`: Servidor API y lógica de la Lista Doblemente Enlazada.
+*   `static/`: Archivos del frontend.
+    *   `index.html`: Estructura y carrusel de nodos.
+    *   `style.css`: Estética premium y animaciones.
+    *   `script.js`: Interactividad y consumo de API.
+
 ## Instalación y Ejecución
-1. **Clona este repositorio** o descarga los archivos fuente.
-2. **Verifica tu versión de Python** instalada:
-   ```bash
-   python --version
+
+1.  **Clonar el repositorio**:
+    ```bash
+    git clone https://github.com/HectorCM2220/PracticaUnidadI.git
+    cd PracticaUnidadI
+    ```
+
+2.  **Instalar dependencias**:
+    ```bash
+    pip install fastapi uvicorn
+    ```
+
+3.  **Iniciar el sistema**:
+    ```bash
+    python -m uvicorn main.py:app --reload
+    ```
+
+4.  **Acceder**:
+    Abre [http://localhost:8000](http://localhost:8000) en tu navegador.
+
