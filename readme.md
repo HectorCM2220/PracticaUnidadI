@@ -17,7 +17,7 @@ Este proyecto es una aplicación web diseñada para gestionar un inventario de l
 *   `main.py`: Servidor API y lógica de la Lista Doblemente Enlazada.
 *   `static/`: Archivos del frontend.
     *   `index.html`: Estructura y carrusel de nodos.
-    *   `style.css`: Estética premium y animaciones.
+    *   `style.css`: Estética y animaciones.
     *   `script.js`: Interactividad y consumo de API.
 
 ## Instalación y Ejecución
