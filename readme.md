@@ -38,9 +38,6 @@ Este proyecto es una aplicación web diseñada para gestionar un inventario de l
     python -m uvicorn main.py:app --reload
     ```
 
-4.  **Acceder**:
-    Abre [http://localhost:8000](http://localhost:8000) en tu navegador.
-
 ## Arquitectura del Sistema (UML)
 
 ![Diagrama UML](diagramaUML.png)
