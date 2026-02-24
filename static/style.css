@@ -333,6 +333,46 @@ h1 {
     box-shadow: 0 10px 30px var(--accent-glow);
 }
 
+/* Selector de Posición */
+.position-selector {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    border: 1px dashed var(--glass-border);
+}
+
+.section-hint {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.radio-group label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mini-input {
+    width: 60px !important;
+    padding: 0.3rem !important;
+    margin: 0 !important;
+    text-align: center;
+    font-size: 0.8rem !important;
+}
+
 .delete-action {
     display: block;
     margin-top: 2rem;

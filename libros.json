@@ -1,0 +1,23 @@
+[
+    {
+        "titulo": "Fortnite",
+        "autor": "Epic Games",
+        "ano": "2018",
+        "isbn": "1230219402192",
+        "categoria": "Videojuegos"
+    },
+    {
+        "titulo": "Biblia",
+        "autor": "Dios",
+        "ano": "1021",
+        "isbn": "1230219402193",
+        "categoria": "Religion"
+    },
+    {
+        "titulo": "amlo",
+        "autor": "amlo",
+        "ano": "2012",
+        "isbn": "213213213",
+        "categoria": "politica"
+    }
+]

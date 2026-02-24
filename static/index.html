@@ -95,7 +95,18 @@
                             <input type="text" id="categoria" placeholder=" " required>
                             <label for="categoria">Categoría Literaria</label>
                         </div>
-                        <button type="submit" class="prime-btn">Insertar al Final</button>
+
+                        <div class="position-selector">
+                            <p class="section-hint">¿Dónde enlazar este nodo?</p>
+                            <div class="radio-group">
+                                <label><input type="radio" name="posicion" value="inicio"> Al Inicio</label>
+                                <label><input type="radio" name="posicion" value="final" checked> Al Final</label>
+                                <label><input type="radio" name="posicion" value="medio"> En Posición:</label>
+                                <input type="number" id="pos-index" value="1" min="1" class="mini-input">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="prime-btn">Insertar Libro en la Lista</button>
                     </form>
                 </div>
             </section>

@@ -47,8 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
             autor: document.getElementById('autor').value,
             ano: document.getElementById('ano').value,
             isbn: document.getElementById('isbn').value,
-            categoria: document.getElementById('categoria').value
+            categoria: document.getElementById('categoria').value,
+            posicion: document.querySelector('input[name="posicion"]:checked').value,
+            index: document.getElementById('pos-index').value
         };
+
+        // Validación de Formatos
+        if (isNaN(nuevoLibro.ano) || isNaN(nuevoLibro.isbn)) {
+            showToast("Año e ISBN deben ser números", "error");
+            return;
+        }
 
         try {
             const res = await fetch('/api/libros', {
