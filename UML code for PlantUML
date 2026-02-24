@@ -1,0 +1,38 @@
+@startuml
+
+title Diagrama UML - Biblioteca con Lista Doblemente Enlazada
+
+class Libro {
+    
+titulo: str
+autor: str
+ano: str
+isbn: str
+categoria: str
++ init(titulo: str, autor: str, ano: str, isbn: str, categoria: str)+ str(): str
+}
+
+class Nodo {
+    
+dato: Libro
+siguiente: Nodo
+anterior: Nodo
++ init(dato: Libro)
+}
+
+class ListaDoble {
+    
+cabeza: Nodo
+cola: Nodo+ init()+ insertar_final(libro: Libro)+ recorrer_adelante()+ recorrer_atras()+ buscar_isbn(isbn: str): Nodo+ buscar_autor_categoria(texto: str): list+ actualizar(isbn: str, titulo: str, autor: str, ano: str, categoria: str)+ eliminar(isbn: str)
+}
+
+class menu {
+    + menu()
+}
+
+' Relaciones
+Nodo --> Libro : contiene
+ListaDoble --> Nodo : maneja
+menu --> ListaDoble : utiliza
+
+@enduml
